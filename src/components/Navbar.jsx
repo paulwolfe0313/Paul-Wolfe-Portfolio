@@ -11,7 +11,8 @@ export default function Navbar() {
           <li><Link to="/projects" className="hover:text-teal-400">Projects</Link></li>
           <li><Link to="/case-studies" className="hover:text-teal-400">Case Studies</Link></li>
           <li><Link to="/contact" className="hover:text-teal-400">Contact</Link></li>
-        </ul>
+          <li><Link to="/ai-contact" className="hover:text-teal-400">Chat with PaulBot</Link></li>
+      </ul>
       </div>
     </nav>
   );

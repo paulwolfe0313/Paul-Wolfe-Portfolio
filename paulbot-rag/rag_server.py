@@ -6,6 +6,14 @@ from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 from pinecone import Pinecone
 import requests
+import time
+from fastapi import Request
+from collections import defaultdict
+
+# Track user sessions
+usage_tracker = defaultdict(lambda: {"count": 0, "last_reset": time.time()})
+MAX_REQUESTS = 5
+WEEK_SECONDS = 604800  # 7 days
 
 # Load environment variables
 load_dotenv()
@@ -23,7 +31,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # for dev, restrict later
+    allow_origins=["https://paul-wolfe-portfolio.vercel.app"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -33,6 +41,23 @@ class QuestionRequest(BaseModel):
 
 @app.post("/ask-paulbot")
 def ask_paulbot(request: QuestionRequest):
+     # Get client IP
+    client_ip = request.client.host
+
+    # Rate limit check
+    usage = usage_tracker[client_ip]
+    now = time.time()
+
+    # Reset counter weekly
+    if now - usage["last_reset"] > WEEK_SECONDS:
+        usage_tracker[client_ip] = {"count": 0, "last_reset": now}
+
+    # Deny if over limit
+    if usage_tracker[client_ip]["count"] >= MAX_REQUESTS:
+        return {"answer": "⚠️ You've reached your weekly limit of 5 messages. Come back next week!"}
+
+    # Count this request
+    usage_tracker[client_ip]["count"] += 1
     question = request.question.strip()
     print(f"❓ Question received: {question}")
 

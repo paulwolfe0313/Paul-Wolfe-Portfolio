@@ -5,6 +5,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import CaseStudies from './pages/CaseStudies';
 import Contact from './pages/Contact';
+import AIContactBot from './components/AIContactBot';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/ai-contact" element={<AIContactBot />} />
       </Routes>
     </Router>
   );
