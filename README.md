@@ -1,42 +1,45 @@
-# Paul Wolfe – AI Portfolio & Intelligent Chatbot (PaulBot)
+# Paul Wolfe – AI Portfolio & Intelligent Chatbot
 
-Welcome to my interactive portfolio website and AI-powered assistant: **PaulBot**. This project combines a professional frontend built in **React** with a powerful, intelligent backend using **FastAPI**, **Pinecone**, and a fine-tuned **Mistral LLM** via Hugging Face.
+Welcome to my personal portfolio, powered by full-stack AI and modern web technology.
 
----
-
-## Live Demo
-
-🌐 [Coming Soon] – or run locally by following the setup instructions below.
+**Live site:** [https://paulwolfe.dev](https://paulwolfe.dev)
 
 ---
 
-## Features
+## What’s Inside
 
-### Frontend (React + Tailwind)
-- Modern UI showcasing projects, case studies, and contact info
-- Custom-built `PaulBot` chat interface for interacting with the AI
-- Real-time answers about me, my experience, and how to reach me
+### 🖥️ Frontend
+- **Framework:** React
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+- **Features:**
+  - Responsive portfolio pages
+  - Projects, case studies, and contact info
+  - PaulBot: a smart AI chat assistant
 
-### Backend (Python + FastAPI + RAG)
-- **Retrieval-Augmented Generation (RAG)** architecture using:
-  - `sentence-transformers` for embedding
-  - `Pinecone` for vector similarity search
-  - Hugging Face **private endpoint** running `mistral-7b-instruct`
-- Real-time Q&A: Bot pulls facts from a Pinecone vector store and generates context-aware responses
+### Backend
+- **Framework:** FastAPI
+- **Deployment:** Render
+- **Features:**
+  - RAG (Retrieval-Augmented Generation) pipeline
+  - Vector search with Pinecone
+  - LLM responses powered by Replicate
+
+### AI Integration
+- **Vector DB:** Pinecone
+- **Embeddings:** Hugging Face `all-MiniLM-L6-v2`
+- **LLM:** `meta/meta-llama-3-8b-instruct` (via Replicate)
+- **Rate limiting:** 5 messages/week/IP
 
 ---
 
 ## Tech Stack
 
-| Layer       | Tool / Service                              |
-|-------------|---------------------------------------------|
-| Frontend    | React, Tailwind CSS                         |
-| Backend     | FastAPI, Python                             |
-| Embeddings  | `all-MiniLM-L6-v2` (Hugging Face)           |
-| Vector DB   | Pinecone                                     |
-| LLM         | `mistral-7b-instruct-v0.3` on Hugging Face   |
-| Deployment  | Local + Hugging Face Endpoints              |
+**Languages & Tools:**
+- Python (FastAPI, sentence-transformers, requests)
+- JavaScript (React, JSX)
+- HTML / CSS (Tailwind)
+- REST APIs (Replicate, Pinecone)
+- GitHub + Vercel + Render
 
----
 
-## 🚀 How to Run Locally
