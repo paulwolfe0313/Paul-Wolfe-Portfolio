@@ -5,31 +5,22 @@ import ProjectCard from '../components/ProjectCard';
 
 export default function Projects() {
   const projects = [
-    {
-      title: 'AI Trading Bot',
-      description: 'Built a reinforcement-learning-based crypto bot with real-time market data analysis.',
-      tech: ['Python', 'Pandas', 'TensorFlow'],
-      //image: project1,
-      github: 'https://github.com/yourname/ai-trading-bot',
-      demo: ''
-    },
-    {
-      title: 'Snowflake + Tableau Dashboard',
-      description: 'Enterprise-grade visualization pipeline using Snowflake, Fivetran, and Tableau.',
-      tech: ['SQL', 'Snowflake', 'Tableau'],
-      //image: project2,
-      github: '',
-      demo: ''
-    },
-    {
-      title: 'ML Model @ United Way',
-      description: 'Used classification models to predict campaign response outcomes from big datasets.',
-      tech: ['R', 'Python', 'Jupyter'],
-      //image: project3,
-      github: '',
-      demo: ''
-    }
-  ];
+  {
+    title: 'Data Crumbs (Chrome Extension)',
+    description: 'AI-powered Chrome extension that classifies cookies, summarizes privacy policies, and calculates trust scores.',
+    tech: ['React', 'Vite', 'Tailwind', 'Hugging Face', 'Replicate', 'FastAPI', 'Python'],
+    github: 'https://github.com/paulwolfe0313/data-crumbs',
+    demo: ''
+  },
+  {
+    title: 'Reel Meals',
+    description: 'Movie and dinner pairing web app using TMDB and recipe APIs with Firebase authentication.',
+    tech: ['React', 'Tailwind', 'Firebase', 'TMDB API'],
+    github: 'https://github.com/paulwolfe0313/reel-meals',
+    demo: ''
+  }
+];
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black to-gray-900 text-white py-20 px-6">
