@@ -5,7 +5,7 @@ export default function Home() {
     <div className="bg-gradient-to-br from-purple-900 to-black text-white min-h-screen flex flex-col justify-center items-center px-4 text-center">
       
       {/* Profile Image */}
-      <div className="w-59 h-59 mb-8 relative"> {/* Increased size */}
+      <div className="w-47 h-48 mb-8 relative"> {/* Increased size */}
         <img
           src={profile}
           alt="Paul Wolfe"
